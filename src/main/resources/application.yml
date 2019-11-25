@@ -1,0 +1,18 @@
+server:
+   port: 8000
+spring:
+   jpa: 
+      generate-ddl: false #启动时初始化数据库
+      show-sql: true
+      hibernate:
+         ddl-auto: none #启动过程中，根据实体自动映射成为数据库的表结构
+   datasource:
+      platform: h2
+      schema: classpath:schema.sql
+      data: classpath:data.sql
+   logging:
+      level:
+         root: INFO
+         org.hibernate: INFO
+         org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+         org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
